@@ -1,0 +1,81 @@
+╔══════════════════════════════════════════════════════════════╗
+║  🚀 CARA MUDAH DEPLOY KE VERCEL - PANDUAN SINGKAT            ║
+╚══════════════════════════════════════════════════════════════╝
+
+LANGKAH 1: BUAT AKUN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Buat akun GitHub: https://github.com (gratis)
+2. Buat akun Vercel: https://vercel.com (gratis)
+   → Login pakai GitHub (paling mudah)
+
+LANGKAH 2: UPLOAD KE GITHUB
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CARA TERMUDAH: Pakai GitHub Desktop
+
+1. Download GitHub Desktop: https://desktop.github.com
+2. Install dan login
+3. Klik "File" → "Add Local Repository"
+4. Pilih folder: /Users/x17zc/Documents/bot gtau
+5. Klik "Publish repository"
+   → Pilih "Make this repository public"
+   → Klik "Publish repository"
+
+SELESAI! File sudah di GitHub.
+
+LANGKAH 3: DEPLOY KE VERCEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Buka https://vercel.com
+2. Login (pakai GitHub)
+3. Klik "Add New..." → "Project"
+4. Pilih repository yang baru di-upload
+5. Klik "Import"
+6. Pengaturan:
+   - Framework: "Other"
+   - Build Command: KOSONG
+   - Output Directory: KOSONG
+   - Install Command: npm install
+7. Klik "Deploy"
+8. Tunggu 1-2 menit
+9. Dapat URL seperti: your-app.vercel.app
+
+LANGKAH 4: UPDATE DOMAIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Copy URL Vercel Anda (misalnya: crypto-game.vercel.app)
+2. Buka GitHub → repository Anda
+3. Klik file "farcaster.json"
+4. Klik icon pensil (Edit)
+5. Ganti semua "your-domain.com" dengan URL Vercel:
+   
+   Contoh:
+   "homeUrl": "https://crypto-game.vercel.app"
+   "iconUrl": "https://crypto-game.vercel.app/icon.png"
+   "splashImageUrl": "https://crypto-game.vercel.app/splash.png"
+   
+6. Klik "Commit changes"
+7. Vercel otomatis redeploy
+
+LANGKAH 5: BUAT ICON & SPLASH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Buat icon.png (512x512px)
+   → Bisa pakai Canva.com (gratis)
+   → Upload ke folder "public" di GitHub
+
+2. Buat splash.png (1200x630px)
+   → Design splash screen
+   → Upload ke folder "public" di GitHub
+
+3. Update farcaster.json dengan URL icon dan splash
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ SELESAI! Game Anda sudah online di Vercel!
+
+URL Anda akan seperti:
+- https://your-app.vercel.app
+- https://your-app.vercel.app/farcaster.json
+
+Lanjut ke langkah berikutnya:
+→ Sign manifest farcaster.json
+→ Register di Farcaster Developer Portal
+
+Untuk detail lengkap, baca: DEPLOY_VERCEL.md
+

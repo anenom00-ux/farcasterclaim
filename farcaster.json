@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "name": "Crypto Coin Collector",
+  "iconUrl": "https://your-domain.com/icon.png",
+  "splashImageUrl": "https://your-domain.com/splash.png",
+  "splashBackgroundColor": "#667eea",
+  "homeUrl": "https://your-domain.com",
+  "webhookUrl": "https://your-domain.com/webhook"
+}
+
