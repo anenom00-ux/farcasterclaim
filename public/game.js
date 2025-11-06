@@ -1,17 +1,5 @@
-// Farcaster SDK - akan diisi jika tersedia
-let sdk = null;
-
-// Try to load SDK (only available in Farcaster environment)
-(async function loadSDK() {
-  try {
-    const sdkModule = await import('@farcaster/miniapp-sdk');
-    sdk = sdkModule.sdk;
-    console.log('✅ Farcaster SDK loaded');
-  } catch (error) {
-    console.log('⚠️ Farcaster SDK not available (running in browser)');
-    sdk = null;
-  }
-})();
+// Import Farcaster Mini App SDK
+import { sdk } from '@farcaster/miniapp-sdk';
 
 // Leaderboard functions
 function getLeaderboard() {
@@ -163,10 +151,16 @@ async function initApp() {
     // Load coins from CoinGecko first
     await loadCoinGeckoCoins();
     
-    if (sdk && sdk.actions) {
+    // Call ready() after app is fully loaded - IMPORTANT for Farcaster Mini Apps
+    // This hides the splash screen and displays your content
+    try {
       await sdk.actions.ready();
       console.log('✅ Mini App siap!');
+    } catch (sdkError) {
+      console.log('⚠️ Farcaster SDK not available (running outside Farcaster):', sdkError);
+      // Game tetap bisa dimainkan meskipun SDK tidak tersedia
     }
+    
     updateHighScore();
     console.log('✅ Game initialized');
   } catch (error) {
