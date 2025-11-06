@@ -12,8 +12,16 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(join(__dirname, 'public')));
 
 // Route untuk serve farcaster.json manifest
+// Best practice: serve di /.well-known/farcaster.json dan /farcaster.json
+app.get('/.well-known/farcaster.json', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.sendFile(join(__dirname, 'farcaster.json'));
+});
+
 app.get('/farcaster.json', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.sendFile(join(__dirname, 'farcaster.json'));
 });
 
